@@ -1,0 +1,61 @@
+<!-- 静的ファイルのURLを生成するstaticタグをロードする -->
+{% load static %}
+<!DOCTYPE html>
+<!-- 言語指定をenからjaに変更 -->
+<html lang="ja" data-bs-theme="auto">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.112.5">
+        <title>Log out</title>
+
+        <!-- Bootstrap core CSS -->
+        <!--
+        Bootstrap core CSSを読み込むコードをBootstrapからコピーして
+        <link>タグを書き換え -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href={% static "css/styles.css" %} rel="stylesheet">
+        <link href={% static "css/sign-in.css" %} rel="stylesheet">
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-dark bg-dark" id="mainHeader">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href={% url 'blog1:index' %}>Django's Blog</a>
+            </div>
+        </nav>
+        <!-- Page Header-->
+
+        <main class="">
+            <!-- Bootstrapのグリッドシステム -->
+            <div class="container">
+            <!-- 行を配置 -->
+            <div class="row">
+                <!-- 列の左右に余白offset-4を入れる
+                    列の上下パディングはpy-4 -->
+                <div class="col offset-4 py-4">
+
+                <h3>ログアウトしました</h3>
+                <!-- トップページのリンクテキスト -->
+                <p><a href={% url 'blog1:index' %}>トップページへ</a><p>
+                </div>
+            </div>
+            </div>
+        </main>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Django's Blog 2024</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
